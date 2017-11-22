@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<!--
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="//code.jquery.com/jquery-1.12.4.js"></script>
+<script
+	src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+<script
+	src="https://cdn.datatables.net/buttons/1.4.2/js/dataTables.buttons.min.js"></script>
+<script src="//cdn.datatables.net/buttons/1.4.2/js/buttons.flash.min.js"></script>
+<script src="//cdn.datatables.net/buttons/1.4.2/js/buttons.html5.min.js"></script>
+<script src="//cdn.datatables.net/buttons/1.4.2/js/buttons.print.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.0/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.0/js/responsive.bootstrap.min.js"></script>
+
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet"
+	href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+<link rel="stylesheet"
+	href="https://cdn.datatables.net/buttons/1.4.2/css/buttons.dataTables.min.css">
+<link rel="stylesheet"
+	href="https://cdn.datatables.net/select/1.2.3/css/select.dataTables.min.css">
+<link rel="stylesheet"
+	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+ -->
+ <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+ <!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<link rel="stylesheet"
+	href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+<link rel="stylesheet"
+	href="https://cdn.datatables.net/buttons/1.4.2/css/buttons.dataTables.min.css">
+<link rel="stylesheet"
+	href="https://cdn.datatables.net/responsive/2.2.0/css/responsive.bootstrap.min.css">
+
+
+<script
+	src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+<script
+	src="https://cdn.datatables.net/buttons/1.4.2/js/dataTables.buttons.min.js"></script>
+<script src="//cdn.datatables.net/buttons/1.4.2/js/buttons.flash.min.js"></script>
+<script src="//cdn.datatables.net/buttons/1.4.2/js/buttons.html5.min.js"></script>
+<script src="//cdn.datatables.net/buttons/1.4.2/js/buttons.print.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.0/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.0/js/responsive.bootstrap.min.js"></script>
+
+<script>
+	function display(test) {
+		$("#dialog").dialog();
+	}
+	function gogo() {
+		alert("승인 완료 --> 메일 발송 ");
+	}
+
+
+	$(document).ready(function() {
+		console.log("2");
+		$('#example').DataTable({
+			"ajax" : "/search1",
+			"dom" : 'Bfrtip',
+			"buttons" : [
+				'copy', 'csv', 'excel', 'pdf', 'print'
+			],
+			responsive: {
+	            details: {
+	                display: $.fn.dataTable.Responsive.display.modal( {
+	                    header: function ( ) {
+	                        //var data = row.data();
+	                        console.log("1");
+	                        return 'Details for ';
+	                    }
+	                } ),
+	                renderer: $.fn.dataTable.Responsive.renderer.tableAll( {
+	                    tableClass: 'table'
+	                } )
+	            }
+	        }
+		});
+		/*
+		var table = $('#example').DataTable();
+
+		$('#example tbody').on('click', 'tr', function() {
+			var data = table.row(this).data();
+			alert('You clicked on ' + data[0] + data[1] + '\'s row');
+
+		}); */
+	});
+
+</script>
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Project name</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="/home.html">Home</a></li>
+					<li><a href="/user_manager.html">User 관리</a></li>
+					<li><a href="/app_manager.html">App 관리</a></li>
+					<li><a href="/test4">Meta 관리</a></li>
+					<li><a href="/test5">연동 설정</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div style="height: 100px;"></div>
+1111111
+
+	<div class="col-md-10 col-md-offset-1">
+		<table id="example" class=" table" cellspacing="0" width="100%">
+			<thead>
+				<tr>
+					<th>이메일1</th>
+					<th>이름</th>
+				</tr>
+			</thead>
+		</table>
+	</div>
+
+</body>
+</html>
+
