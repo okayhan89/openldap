@@ -17,13 +17,61 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
+<link rel="stylesheet"
+	href="http://bootstrapk.com/examples/cover/cover.css">
+
 <script>
 	function user_registeration(){
 		alert("신청완료");
 	}
 </script>
 
+
+
+
+
+
+
+
+
 <body>
+
+	<div class="site-wrapper">
+
+	      <div class="site-wrapper-inner">
+
+	        <div class="cover-container">
+						          <div class="inner cover">
+						            <h1 class="cover-heading">LDAP ADMIN PAGE</h1>
+						            <p class="lead">SKB Bluemix, DevOps, 통합운용 ID</p>
+
+												<form class="form-signin " >
+													<h3 class="form-signin-heading">Login</h3>
+													<label for="inputEmail" class="sr-only ">Email</label> <input type="email"
+														id="inputemail" class="form-control form-group"
+														placeholder="Email ex) abc@sk.com" required=""
+														autofocus=""> <label for="inputPassword" class="sr-only">Password</label>
+													<input type="password" id="inputPassword" class="form-control"
+														placeholder="Password" required="">
+													<div class="checkbox">
+														<label> <input type="checkbox" value="remember-me">
+															Remember me
+														</label>
+													</div>
+													<div class="row">
+										        <button class="col-md-3 col-md-offset-9 btn btn-md btn-primary" type="submit" >Sign in</button>
+													</div>
+												</form>
+												<div class="row">
+													<button class="col-md-3 col-md-offset-9 btn btn-md btn-primary" type="submit" onclick="location.href='home' ">db 호출 없이 home</button>
+												</div>
+						          </div>
+					</div>
+			</div>
+		</div>
+
+
+
 	<div class="container">
 		<form class="form-signin " >
 			<h2 class="form-signin-heading">G2 LDAP ADMIN PAGE</h2>
@@ -52,29 +100,31 @@
 
 		<hr />
 
-		<form >
+		<form action="/add" method="post">
 			<h3 class="form-signin-heading">User Registeration</h3>
 			<div class="form-group">
-				<label for="exampleInputEmail1">소속</label> <input type="text"
-					class="form-control" id="exampleInputEmail1" placeholder="소속">
+				<label for="exampleInputEmail1">소속</label>
+        <input type="text" class="form-control" name="company" placeholder="skb/sk/bp">
 			</div>
 			<div class="form-group">
-				<label for="exampleInputPassword1">이름</label> <input type="text"
-					class="form-control" id="exampleInputPassword1" placeholder="이름">
+				<label for="exampleInputPassword1">이름</label>
+        <input type="text" class="form-control" name="name" placeholder="이름">
 			</div>
 			<div class="form-group">
-				<label for="exampleInputPassword1">비밀번호</label> <input
-					type="password" class="form-control" id="exampleInputPassword1"
-					placeholder="Password">
+				<label for="exampleInputPassword1">비밀번호</label>
+        <input type="password" class="form-control" name="password" placeholder="Password">
 			</div>
 			<div class="form-group">
-				<label for="exampleInputPassword1">Email</label> <input type="email"
-					class="form-control" id="exampleInputPassword1" placeholder="Email">
+				<label for="exampleInputPassword1">Email</label>
+        <input type="email" class="form-control" name="email" placeholder="Email">
 			</div>
 			<div class="form-group">
-				<label for="exampleInputPassword1">연락처</label> <input type="phone"
-					class="form-control" id="exampleInputPassword1"
-					placeholder="phone number">
+				<label for="exampleInputPassword1">연락처</label>
+        <input type="phone" class="form-control" name="phone" placeholder="phone number">
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">담당파트</label>
+        <input type="phone" class="form-control" name="part" placeholder="XPG/SCS/METV/NCMS...">
 			</div>
 			<div class="form-group">
 				<label for="exampleInputPassword1">권한 요청</label>
@@ -115,12 +165,16 @@
 					</label>
 				</div>
 			</div>
-			<button type="submit" class="btn btn-default" onclick="user_registeration();">신청</button>
+
+			<input type="submit" class="btn btn-default">
 		</form>
+
 
 	</div>
 
 
+
+
+
 </body>
 </html>
-

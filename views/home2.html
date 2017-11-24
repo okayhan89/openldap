@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<!--
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="//code.jquery.com/jquery-1.12.4.js"></script>
+<script
+	src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+<script
+	src="https://cdn.datatables.net/buttons/1.4.2/js/dataTables.buttons.min.js"></script>
+<script src="//cdn.datatables.net/buttons/1.4.2/js/buttons.flash.min.js"></script>
+<script src="//cdn.datatables.net/buttons/1.4.2/js/buttons.html5.min.js"></script>
+<script src="//cdn.datatables.net/buttons/1.4.2/js/buttons.print.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.0/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.0/js/responsive.bootstrap.min.js"></script>
+
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet"
+	href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+<link rel="stylesheet"
+	href="https://cdn.datatables.net/buttons/1.4.2/css/buttons.dataTables.min.css">
+<link rel="stylesheet"
+	href="https://cdn.datatables.net/select/1.2.3/css/select.dataTables.min.css">
+<link rel="stylesheet"
+	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+ -->
+ <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+ <!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<link rel="stylesheet"
+	href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+<link rel="stylesheet"
+	href="https://cdn.datatables.net/buttons/1.4.2/css/buttons.dataTables.min.css">
+<link rel="stylesheet"
+	href="https://cdn.datatables.net/responsive/2.2.0/css/responsive.bootstrap.min.css">
+
+
+<script
+	src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+<script
+	src="https://cdn.datatables.net/buttons/1.4.2/js/dataTables.buttons.min.js"></script>
+<script src="//cdn.datatables.net/buttons/1.4.2/js/buttons.flash.min.js"></script>
+<script src="//cdn.datatables.net/buttons/1.4.2/js/buttons.html5.min.js"></script>
+<script src="//cdn.datatables.net/buttons/1.4.2/js/buttons.print.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.0/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.0/js/responsive.bootstrap.min.js"></script>
+
+
+
+
+<!-- <link rel="stylesheet"
+	href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+<link rel="stylesheet"
+  href="https://cdn.datatables.net/buttons/1.4.2/css/buttons.dataTables.min.css">
+<link rel="stylesheet"
+  href="https://cdn.datatables.net/select/1.2.3/css/select.dataTables.min.css">
+<link rel="stylesheet"
+  href="https://editor.datatables.net/extensions/Editor/css/editor.dataTables.min.css">
+
+<script src="//code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.4.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/select/1.2.3/js/dataTables.select.min.js"></script>
+<script src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script> -->
+
+
+<script>
+	function display(test) {
+		$("#dialog").dialog();
+	}
+	function gogo() {
+		alert("승인 완료 --> 메일 발송 ");
+	}
+
+var editor;
+
+	$(document).ready(function() {
+		console.log("2");
+
+        editor = new $.fn.dataTable.Editor( {
+        ajax: "/search",
+        table: "#example"
+      });
+});
+
+    // $('#example tfoot th').each( function () {
+    //         var title = $(this).text();
+    //         $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    // } );
+    //
+		// $('#example').DataTable({
+		// 	"ajax" : "/search",
+		// 	"dom" : 'Bfrtip',
+		// 	"buttons" : [
+		// 		'copy', 'csv', 'excel', 'pdf', 'print'
+		// 	]
+
+		// });
+
+    // DataTable
+  //   var table = $('#example').DataTable();
+  //
+  //   // Apply the search
+  //   table.columns().every( function () {
+  //       var that = this;
+  //
+  //       $( 'input', this.footer() ).on( 'keyup change', function () {
+  //           if ( that.search() !== this.value ) {
+  //               that
+  //                   .search( this.value )
+  //                   .draw();
+  //           }
+  //       } );
+  //   } );
+  //
+  //   $('#example tbody').on( 'click', 'Email', function () {
+  //     console.log("aaa");
+  //   table
+  //       .row( $(this).parents('tr') )
+  //       .remove()
+  //       .draw();
+  //   } );
+  //
+  //   $('#example tbody').on( 'click', 'tr', function () {
+  //       if ( $(this).hasClass('selected') ) {
+  //           $(this).removeClass('selected');
+  //       }
+  //       else {
+  //           table.$('tr.selected').removeClass('selected');
+  //           $(this).addClass('selected');
+  //       }
+  //   } );
+  //
+  //   var data=null;
+  //   $('#example tbody').on('click', 'tr', function () {
+  //           data = table.row( this ).data();
+  //           console.log(data);
+  //           //alert( 'You clicked on '+data+'\'s row' );
+  //   } );
+  //
+  //   $('#userdelete').click( function () {
+  //       //var data = table.row( this ).data();
+  //       //console.log("c" + data[0]);
+  //       if (confirm( data[1] + " User를 삭제 하시겠습니까? ")){
+  //         $.ajax({
+  //             type:"GET",
+  //             url: '/del?uid=' + data[0] + '&ou=' + data[3],
+  //             //data:data[0],
+  //             success:function(args){
+  //                 console.log("success");
+  //                 console.log(data[0]);
+  //                 console.log(args);
+  //             },
+  //             //beforeSend:showRequest,
+  //             error:function(e){
+  //                 //alert(e.responseText);
+  //             }
+  //         });
+  //         table.row('.selected').remove().draw( false );
+  //     }
+  //   } );
+  //
+	// });
+
+</script>
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">Project name</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="/home.html">Home</a></li>
+					<li><a href="/user_manager.html">User 관리</a></li>
+					<li><a href="/app_manager.html">App 관리</a></li>
+					<li><a href="/test4">Meta 관리</a></li>
+					<li><a href="/test5">연동 설정</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div style="height: 100px;"></div>
+
+
+  <div class="row">
+  	<div class="col-md-10 col-md-offset-1">
+  		<table id="example" class=" table table-striped" cellspacing="0" width="100%">
+  			<thead>
+  				<tr>
+  					<th>Email</th>
+            <th>Name</th>
+            <th>Part</th>
+            <th>Company(OU)</th>
+  				</tr>
+  			</thead>
+        <tfoot>
+          <tr>
+  					<th>Email</th>
+            <th>Name</th>
+            <th>Part</th>
+            <th>Company(OU)</th>
+  				</tr>
+        </tfoot>
+  		</table>
+  	</div>
+  </div>
+
+<hr/>
+
+  <div class="row">
+    <button class="btn btn-success col-md-3 col-md-offset-2" id="useradd">User 등록</button>
+    <button class="btn btn-danger col-md-3 col-md-offset-2" id="userdelete">User 삭제</button>
+  </div>
+
+</body>
+
+</html>
